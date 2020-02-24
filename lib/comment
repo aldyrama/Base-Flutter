@@ -1,0 +1,30 @@
+generate @JsonSerializable() :
+flutter packages pub run build_runner build
+flutter packages pub run build_runner build --delete-conflicting-outputs
+
+build apk :
+flutter build apk --split-per-abi --release
+flutter build appbundle --target-platform android-arm,android-arm64
+
+build ios :
+flutter build ios
+
+sync pubspec.yml :
+flutter pub get
+
+upgrade package :
+flutter pub upgrade
+
+change channel :
+flutter channel
+flutter channel dev
+
+Selecting a specific version :
+flutter version v1.9.1+hotfix.3
+
+clean cache :
+flutter clean
+
+repair cache :
+pub cache repair
+flutter pub cache repair
